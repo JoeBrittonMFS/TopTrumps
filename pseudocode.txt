@@ -1,0 +1,7 @@
+need to create the cards (the data). - Create objects with the card attributes
+
+Health: 0 - 100
+strength: 0 - 10
+height: m
+kills: 0 - 1,000
+evilness: 0 - 10

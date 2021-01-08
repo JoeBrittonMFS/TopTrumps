@@ -1,0 +1,40 @@
+#container {
+    display: flex;
+    justify-content: center;
+}
+
+#card {
+    /* display: flex; */
+    height: 80vh;
+    width: 40vh;
+    outline: 5px solid red;
+}
+
+#header {
+    height: 20vh;
+    width: 40vh;
+    outline: 5px solid blue;
+}
+#header h1 {
+    margin: 0;
+}
+
+#attributes {
+    display: flex;
+    flex-direction: column;
+    outline: 5px solid yellow;
+    height: 60vh;
+}
+
+#attr-header {
+    text-align: center;
+    margin: 10px;
+}
+
+
+
+
+
+
+
+
