@@ -58,26 +58,29 @@ console.log(randomNumArray);
 
 
 
-
-const cardPicker = () => {
     // Players cards
+const playerCards = () => {
+
     let yourCards = [];
     for (let i = 0; i < 15; i++) {
-        yourCards.push(cardsArray[randomNumArray[i]]);
-
+        setTimeout(() => {
+            yourCards.push(cardsArray[randomNumArray[i]]);
+        }, 1000)
     }
-
-    // Computers cards
-    let compCards = [];
-    
-    for (let j = 15; j < 30; j++) {
-        compCards.push(cardsArray[randomNumArray[j]]);
-    }
-
+    compCards();
     console.log(yourCards);
-    console.log(compCards);
-    return yourCards;
 }
 
+    // Computers cards
+const compCards = () => {
 
-document.getElementById("attr-list").innerHTML = cardPicker();
+    let compCards = [];
+    for (let j = 15; j < 30; j++) {
+        setTimeout(() => {
+            compCards.push(cardsArray[randomNumArray[j]]);
+        }, 1000)
+    }
+    console.log(compCards);
+}
+
+playerCards();
