@@ -28,7 +28,11 @@
 
 #attr-header {
     text-align: center;
-    margin: 10px;
+    margin: 20px;
+}
+
+#attr-list {
+    text-align: center;
 }
 
 

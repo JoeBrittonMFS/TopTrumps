@@ -1,10 +1,20 @@
+// class Card {
+//     constructor(health, strength, height, kills, evilness) {
+//         this.health = health;
+//         this.strength = strength;
+//         this.height = height;
+//         this.kills = kills;
+//         this.evilness = evilness;
+//     }
+// }
+
 class Card {
     constructor(health, strength, height, kills, evilness) {
-        this.health = health;
-        this.strength = strength;
-        this.height = height;
-        this.kills = kills;
-        this.evilness = evilness;
+        this._health = health;
+        this._strength = strength;
+        this._height = height;
+        this._kills = kills;
+        this._evilness = evilness;
     }
 }
 
@@ -57,30 +67,59 @@ while (randomNumArray.length < 30) {
 console.log(randomNumArray);
 
 
-
     // Players cards
-const playerCards = () => {
+// const playerCards = () => {
 
     let yourCards = [];
     for (let i = 0; i < 15; i++) {
-        setTimeout(() => {
-            yourCards.push(cardsArray[randomNumArray[i]]);
-        }, 1000)
+        yourCards.push(cardsArray[randomNumArray[i]]);
     }
-    compCards();
+    // compCards();
     console.log(yourCards);
-}
+// }
 
     // Computers cards
-const compCards = () => {
+// const compCards = () => {
 
     let compCards = [];
     for (let j = 15; j < 30; j++) {
-        setTimeout(() => {
-            compCards.push(cardsArray[randomNumArray[j]]);
-        }, 1000)
+        compCards.push(cardsArray[randomNumArray[j]]);
     }
     console.log(compCards);
-}
+// }
 
-playerCards();
+// playerCards();
+
+
+// const displayAttributes = () => {
+    // let x, txt = "";
+
+    // for (x in vijaya) {
+    //     txt += vijaya[x] + "<br><br>";
+    //     console.log(x + ": " + vijaya[x])
+    // }
+    // document.getElementById("attr-list").innerHTML = txt;
+
+    let cardIndex = 0;
+    document.getElementById("attr-1").innerHTML = "Health: " + yourCards[cardIndex]._health;
+    document.getElementById("attr-1").innerHTML = "Health: " + yourCards[cardIndex]._health;
+    document.getElementById("attr-2").innerHTML = "Strength: " + yourCards[cardIndex]._strength;
+    document.getElementById("attr-3").innerHTML = "Height: " + yourCards[cardIndex]._height;
+    document.getElementById("attr-4").innerHTML = "Kills: " + yourCards[cardIndex]._kills;
+    document.getElementById("attr-5").innerHTML = "Evilness: " + yourCards[cardIndex]._evilness;
+
+    document.getElementById("nextCard").addEventListener("click", function() {
+        cardIndex++;
+        document.getElementById("attr-1").innerHTML = "Health: " + yourCards[cardIndex]._health;
+        document.getElementById("attr-1").innerHTML = "Health: " + yourCards[cardIndex]._health;
+        document.getElementById("attr-2").innerHTML = "Strength: " + yourCards[cardIndex]._strength;
+        document.getElementById("attr-3").innerHTML = "Height: " + yourCards[cardIndex]._height;
+        document.getElementById("attr-4").innerHTML = "Kills: " + yourCards[cardIndex]._kills;
+        document.getElementById("attr-5").innerHTML = "Evilness: " + yourCards[cardIndex]._evilness; 
+    })
+
+// }
+
+// displayAttributes();
+
+// On button click, use the shift() method to remove the first element from the array.
