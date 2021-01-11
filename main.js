@@ -125,6 +125,7 @@ console.log(randomNumArray);
 
 let playerScore = 0;
 let compScore = 0;
+// Health
 document.getElementById("attr-1").addEventListener("click", function() {
     if (yourCards[cardIndex]._health > compCards[cardIndex]._health) {
         console.log(yourCards[cardIndex]._health)
@@ -142,22 +143,183 @@ document.getElementById("attr-1").addEventListener("click", function() {
         console.log("Computer wins this round")
         console.log("Player Score: " + playerScore)
         console.log("Computer Score: " + compScore);
-        document.getElementById("compPoints").innerHTML = "Your Points: " + compScore;
+        document.getElementById("compPoints").innerHTML = "Computer Points: " + compScore;
+        // cardIndex++;
+    }
+});
+// Strength
+document.getElementById("attr-2").addEventListener("click", function() {
+    if (yourCards[cardIndex]._strength > compCards[cardIndex]._strength) {
+        console.log(yourCards[cardIndex]._strength)
+        console.log(compCards[cardIndex]._strength)
+        playerScore++;
+        console.log("PLayer wins this round")
+        console.log("Player Score: " + playerScore);
+        console.log("Computer Score: " + compScore);
+        document.getElementById("yourPoints").innerHTML = "Your Points: " + playerScore
+        // cardIndex++;
+    } else if (compCards[cardIndex]._strength > yourCards[cardIndex]._strength) {
+        console.log(yourCards[cardIndex]._strength)
+        console.log(compCards[cardIndex]._strength)
+        compScore++;
+        console.log("Computer wins this round")
+        console.log("Player Score: " + playerScore)
+        console.log("Computer Score: " + compScore);
+        document.getElementById("compPoints").innerHTML = "Computer Points: " + compScore;
+        // cardIndex++;
+    }
+});
+// Height
+document.getElementById("attr-3").addEventListener("click", function() {
+    if (yourCards[cardIndex]._height > compCards[cardIndex]._height) {
+        console.log(yourCards[cardIndex]._height)
+        console.log(compCards[cardIndex]._height)
+        playerScore++;
+        console.log("PLayer wins this round")
+        console.log("Player Score: " + playerScore);
+        console.log("Computer Score: " + compScore);
+        document.getElementById("yourPoints").innerHTML = "Your Points: " + playerScore
+        // cardIndex++;
+    } else if (compCards[cardIndex]._height > yourCards[cardIndex]._height) {
+        console.log(yourCards[cardIndex]._height)
+        console.log(compCards[cardIndex]._height)
+        compScore++;
+        console.log("Computer wins this round")
+        console.log("Player Score: " + playerScore)
+        console.log("Computer Score: " + compScore);
+        document.getElementById("compPoints").innerHTML = "Computer Points: " + compScore;
+        // cardIndex++;
+    }
+});
+// Kills
+document.getElementById("attr-4").addEventListener("click", function() {
+    if (yourCards[cardIndex]._kills > compCards[cardIndex]._kills) {
+        console.log(yourCards[cardIndex]._kills)
+        console.log(compCards[cardIndex]._kills)
+        playerScore++;
+        console.log("PLayer wins this round")
+        console.log("Player Score: " + playerScore);
+        console.log("Computer Score: " + compScore);
+        document.getElementById("yourPoints").innerHTML = "Your Points: " + playerScore
+        // cardIndex++;
+    } else if (compCards[cardIndex]._kills > yourCards[cardIndex]._kills) {
+        console.log(yourCards[cardIndex]._kills)
+        console.log(compCards[cardIndex]._kills)
+        compScore++;
+        console.log("Computer wins this round")
+        console.log("Player Score: " + playerScore)
+        console.log("Computer Score: " + compScore);
+        document.getElementById("compPoints").innerHTML = "Computer Points: " + compScore;
+        // cardIndex++;
+    }
+});
+// Evilness
+document.getElementById("attr-5").addEventListener("click", function() {
+    if (yourCards[cardIndex]._evilness > compCards[cardIndex]._evilness) {
+        console.log(yourCards[cardIndex]._evilness)
+        console.log(compCards[cardIndex]._evilness)
+        playerScore++;
+        console.log("PLayer wins this round")
+        console.log("Player Score: " + playerScore);
+        console.log("Computer Score: " + compScore);
+        document.getElementById("yourPoints").innerHTML = "Your Points: " + playerScore
+        // cardIndex++;
+    } else if (compCards[cardIndex]._evilness > yourCards[cardIndex]._evilness) {
+        console.log(yourCards[cardIndex]._evilness)
+        console.log(compCards[cardIndex]._evilness)
+        compScore++;
+        console.log("Computer wins this round")
+        console.log("Player Score: " + playerScore)
+        console.log("Computer Score: " + compScore);
+        document.getElementById("compPoints").innerHTML = "Computer Points: " + compScore;
         // cardIndex++;
     }
 });
 
+// Styling
+document.getElementById("yourPoints").style.color = "green";
+document.getElementById("compPoints").style.color = "red";
+
+
+
+// Makes the buttons enabled and disbaled
 document.getElementById("attr-1").addEventListener("click", function() {
     document.getElementById("attr-1").disabled = true;
+    document.getElementById("attr-2").disabled = true;
+    document.getElementById("attr-3").disabled = true;
+    document.getElementById("attr-4").disabled = true;
+    document.getElementById("attr-5").disabled = true;
     document.getElementById("nextCard").addEventListener("click", function() {
         document.getElementById("attr-1").disabled = false
+        document.getElementById("attr-2").disabled = false
+        document.getElementById("attr-3").disabled = false
+        document.getElementById("attr-4").disabled = false
+        document.getElementById("attr-5").disabled = false
     })
 });
-document.getElementById("nextCard").addEventListener("click", function() {
-    document.getElementById("nextCard").disabled = true;
-    document.getElementById("attr-1").addEventListener("click", function() {
-        document.getElementById("nextCard").disabled = false;
+document.getElementById("attr-2").addEventListener("click", function() {
+    document.getElementById("attr-1").disabled = true;
+    document.getElementById("attr-2").disabled = true;
+    document.getElementById("attr-3").disabled = true;
+    document.getElementById("attr-4").disabled = true;
+    document.getElementById("attr-5").disabled = true;
+    document.getElementById("nextCard").addEventListener("click", function() {
+        document.getElementById("attr-1").disabled = false
+        document.getElementById("attr-2").disabled = false
+        document.getElementById("attr-3").disabled = false
+        document.getElementById("attr-4").disabled = false
+        document.getElementById("attr-5").disabled = false
     })
-})
+});
+document.getElementById("attr-3").addEventListener("click", function() {
+    document.getElementById("attr-1").disabled = true;
+    document.getElementById("attr-2").disabled = true;
+    document.getElementById("attr-3").disabled = true;
+    document.getElementById("attr-4").disabled = true;
+    document.getElementById("attr-5").disabled = true;
+    document.getElementById("nextCard").addEventListener("click", function() {
+        document.getElementById("attr-1").disabled = false
+        document.getElementById("attr-2").disabled = false
+        document.getElementById("attr-3").disabled = false
+        document.getElementById("attr-4").disabled = false
+        document.getElementById("attr-5").disabled = false
+    })
+});
+document.getElementById("attr-4").addEventListener("click", function() {
+    document.getElementById("attr-1").disabled = true;
+    document.getElementById("attr-2").disabled = true;
+    document.getElementById("attr-3").disabled = true;
+    document.getElementById("attr-4").disabled = true;
+    document.getElementById("attr-5").disabled = true;
+    document.getElementById("nextCard").addEventListener("click", function() {
+        document.getElementById("attr-1").disabled = false
+        document.getElementById("attr-2").disabled = false
+        document.getElementById("attr-3").disabled = false
+        document.getElementById("attr-4").disabled = false
+        document.getElementById("attr-5").disabled = false
+    })
+});
+document.getElementById("attr-5").addEventListener("click", function() {
+    document.getElementById("attr-1").disabled = true;
+    document.getElementById("attr-2").disabled = true;
+    document.getElementById("attr-3").disabled = true;
+    document.getElementById("attr-4").disabled = true;
+    document.getElementById("attr-5").disabled = true;
+    document.getElementById("nextCard").addEventListener("click", function() {
+        document.getElementById("attr-1").disabled = false
+        document.getElementById("attr-2").disabled = false
+        document.getElementById("attr-3").disabled = false
+        document.getElementById("attr-4").disabled = false
+        document.getElementById("attr-5").disabled = false
+    })
+});
+
+
+// document.getElementById("nextCard").addEventListener("click", function() {
+//     document.getElementById("nextCard").disabled = true;
+//     document.getElementById("attr-1").addEventListener("click", function() {
+//         document.getElementById("nextCard").disabled = false;
+//     })
+// })
 
 
