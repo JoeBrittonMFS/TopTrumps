@@ -102,20 +102,19 @@ console.log(randomNumArray);
 
     let cardIndex = 0;
     document.getElementById("attr-1").innerHTML = "Health: " + yourCards[cardIndex]._health;
-    document.getElementById("attr-1").innerHTML = "Health: " + yourCards[cardIndex]._health;
     document.getElementById("attr-2").innerHTML = "Strength: " + yourCards[cardIndex]._strength;
     document.getElementById("attr-3").innerHTML = "Height: " + yourCards[cardIndex]._height;
     document.getElementById("attr-4").innerHTML = "Kills: " + yourCards[cardIndex]._kills;
     document.getElementById("attr-5").innerHTML = "Evilness: " + yourCards[cardIndex]._evilness;
 
     document.getElementById("nextCard").addEventListener("click", function() {
-        cardIndex++;
-        document.getElementById("attr-1").innerHTML = "Health: " + yourCards[cardIndex]._health;
+        cardIndex++
         document.getElementById("attr-1").innerHTML = "Health: " + yourCards[cardIndex]._health;
         document.getElementById("attr-2").innerHTML = "Strength: " + yourCards[cardIndex]._strength;
         document.getElementById("attr-3").innerHTML = "Height: " + yourCards[cardIndex]._height;
         document.getElementById("attr-4").innerHTML = "Kills: " + yourCards[cardIndex]._kills;
         document.getElementById("attr-5").innerHTML = "Evilness: " + yourCards[cardIndex]._evilness; 
+        // cardIndex++;
     })
 
 // }
@@ -123,3 +122,42 @@ console.log(randomNumArray);
 // displayAttributes();
 
 // On button click, use the shift() method to remove the first element from the array.
+
+let playerScore = 0;
+let compScore = 0;
+document.getElementById("attr-1").addEventListener("click", function() {
+    if (yourCards[cardIndex]._health > compCards[cardIndex]._health) {
+        console.log(yourCards[cardIndex]._health)
+        console.log(compCards[cardIndex]._health)
+        playerScore++;
+        console.log("PLayer wins this round")
+        console.log("Player Score: " + playerScore);
+        console.log("Computer Score: " + compScore);
+        document.getElementById("yourPoints").innerHTML = "Your Points: " + playerScore
+        // cardIndex++;
+    } else if (compCards[cardIndex]._health > yourCards[cardIndex]._health) {
+        console.log(yourCards[cardIndex]._health)
+        console.log(compCards[cardIndex]._health)
+        compScore++;
+        console.log("Computer wins this round")
+        console.log("Player Score: " + playerScore)
+        console.log("Computer Score: " + compScore);
+        document.getElementById("compPoints").innerHTML = "Your Points: " + compScore;
+        // cardIndex++;
+    }
+});
+
+document.getElementById("attr-1").addEventListener("click", function() {
+    document.getElementById("attr-1").disabled = true;
+    document.getElementById("nextCard").addEventListener("click", function() {
+        document.getElementById("attr-1").disabled = false
+    })
+});
+document.getElementById("nextCard").addEventListener("click", function() {
+    document.getElementById("nextCard").disabled = true;
+    document.getElementById("attr-1").addEventListener("click", function() {
+        document.getElementById("nextCard").disabled = false;
+    })
+})
+
+
