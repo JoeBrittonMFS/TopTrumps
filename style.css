@@ -5,14 +5,14 @@
 
 #card {
     /* display: flex; */
-    height: 80vh;
-    width: 40vh;
+    height: 90vh;
+    width: 50vh;
     outline: 5px solid red;
 }
 
 #header {
     height: 20vh;
-    width: 40vh;
+    width: 50vh;
     outline: 5px solid blue;
 }
 #header h1 {
@@ -23,7 +23,7 @@
     display: flex;
     flex-direction: column;
     outline: 5px solid yellow;
-    height: 60vh;
+    height: 70vh;
 }
 
 #attr-header {
@@ -51,6 +51,10 @@ button {
 }
 button:hover {
     background-color: red;
+}
+
+p {
+    font-size: 14px;
 }
 
 

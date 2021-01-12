@@ -1,12 +1,3 @@
-// class Card {
-//     constructor(health, strength, height, kills, evilness) {
-//         this.health = health;
-//         this.strength = strength;
-//         this.height = height;
-//         this.kills = kills;
-//         this.evilness = evilness;
-//     }
-// }
 
 class Card {
     constructor(health, strength, height, kills, evilness) {
@@ -19,7 +10,7 @@ class Card {
 }
 
 // The cards
-const vijaya = new Card(80, 5, 2.2, 245, 6);
+const vijaya = new Card(80, 5, 2.2, 245, 6); 
 const aquila = new Card(50, 4, 1.5, 50, 8);
 const cenric = new Card(70, 7, 1.9, 40, 6);
 const volos = new Card(75, 4, 2.0, 4, 2);
@@ -49,10 +40,10 @@ const paria = new Card(58, 3, 6.2, 720, 8);
 const isokrates = new Card(66, 3, 1.2, 22, 4);
 const irma = new Card(95, 9, 4.2, 230, 9);
 const kynthia = new Card(44, 6, 6.0, 112, 3);
+const thoth = new Card(93, 8, 2.5, 225, 4)
 
 let cardsArray = [
-vijaya, aquila, cenric, volos, ekkehard, pangu, conlaoch, egill, aslaug, kyriakos, brontes, linus, gunnar, sixtus, loakeim, wilhelm, baal, aurelius, saldis, ragnhildr, sigifrid, seraphina, aigle, ahenobarbus, brunhild, rhode, paria, isokrates, irma, kynthia
-]
+vijaya, aquila, cenric, volos, ekkehard, pangu, conlaoch, egill, aslaug, kyriakos, brontes, linus, gunnar, sixtus, loakeim, wilhelm, baal, aurelius, saldis, ragnhildr, sigifrid, seraphina, aigle, ahenobarbus, brunhild, rhode, paria, isokrates, irma, kynthia, thoth]
 
 
 
@@ -88,17 +79,6 @@ console.log(randomNumArray);
     console.log(compCards);
 // }
 
-// playerCards();
-
-
-// const displayAttributes = () => {
-    // let x, txt = "";
-
-    // for (x in vijaya) {
-    //     txt += vijaya[x] + "<br><br>";
-    //     console.log(x + ": " + vijaya[x])
-    // }
-    // document.getElementById("attr-list").innerHTML = txt;
 
     let cardIndex = 0;
     document.getElementById("attr-1").innerHTML = "Health: " + yourCards[cardIndex]._health;
@@ -114,8 +94,10 @@ console.log(randomNumArray);
         document.getElementById("attr-3").innerHTML = "Height: " + yourCards[cardIndex]._height;
         document.getElementById("attr-4").innerHTML = "Kills: " + yourCards[cardIndex]._kills;
         document.getElementById("attr-5").innerHTML = "Evilness: " + yourCards[cardIndex]._evilness; 
-        // cardIndex++;
+        console.log(cardIndex)
+
     })
+
 
 // }
 
@@ -135,7 +117,9 @@ document.getElementById("attr-1").addEventListener("click", function() {
         console.log("Player Score: " + playerScore);
         console.log("Computer Score: " + compScore);
         document.getElementById("yourPoints").innerHTML = "Your Points: " + playerScore
-        // cardIndex++;
+        document.getElementById("playerAttr").innerHTML = "Your Health Attribute - " + yourCards[cardIndex]._health;
+        document.getElementById("compAttr").innerHTML = "Computers Health Attribute - " + compCards[cardIndex]._health;
+        document.getElementById("whoWon").innerHTML = "You won this round! 1 point for you."
     } else if (compCards[cardIndex]._health > yourCards[cardIndex]._health) {
         console.log(yourCards[cardIndex]._health)
         console.log(compCards[cardIndex]._health)
@@ -144,7 +128,9 @@ document.getElementById("attr-1").addEventListener("click", function() {
         console.log("Player Score: " + playerScore)
         console.log("Computer Score: " + compScore);
         document.getElementById("compPoints").innerHTML = "Computer Points: " + compScore;
-        // cardIndex++;
+        document.getElementById("playerAttr").innerHTML = "Your Health Attribute - " + yourCards[cardIndex]._health;
+        document.getElementById("compAttr").innerHTML = "Computers Health Attribute - " + compCards[cardIndex]._health;
+        document.getElementById("whoWon").innerHTML = "You Lost this round. 1 point for the computer."
     }
 });
 // Strength
@@ -156,8 +142,10 @@ document.getElementById("attr-2").addEventListener("click", function() {
         console.log("PLayer wins this round")
         console.log("Player Score: " + playerScore);
         console.log("Computer Score: " + compScore);
-        document.getElementById("yourPoints").innerHTML = "Your Points: " + playerScore
-        // cardIndex++;
+        document.getElementById("yourPoints").innerHTML = "Your Points: " + playerScore;
+        document.getElementById("playerAttr").innerHTML = "Your Strength Attribute - " + yourCards[cardIndex]._strength;
+        document.getElementById("compAttr").innerHTML = "Computers Strength Attribute - " + compCards[cardIndex]._strength;
+        document.getElementById("whoWon").innerHTML = "You won this round! 1 point for you."
     } else if (compCards[cardIndex]._strength > yourCards[cardIndex]._strength) {
         console.log(yourCards[cardIndex]._strength)
         console.log(compCards[cardIndex]._strength)
@@ -166,7 +154,9 @@ document.getElementById("attr-2").addEventListener("click", function() {
         console.log("Player Score: " + playerScore)
         console.log("Computer Score: " + compScore);
         document.getElementById("compPoints").innerHTML = "Computer Points: " + compScore;
-        // cardIndex++;
+        document.getElementById("playerAttr").innerHTML = "Your Strength Attribute - " + yourCards[cardIndex]._strength;
+        document.getElementById("compAttr").innerHTML = "Computers Strength Attribute - " + compCards[cardIndex]._strength;
+        document.getElementById("whoWon").innerHTML = "You lost this round. 1 point for the computer."
     }
 });
 // Height
@@ -178,8 +168,10 @@ document.getElementById("attr-3").addEventListener("click", function() {
         console.log("PLayer wins this round")
         console.log("Player Score: " + playerScore);
         console.log("Computer Score: " + compScore);
-        document.getElementById("yourPoints").innerHTML = "Your Points: " + playerScore
-        // cardIndex++;
+        document.getElementById("yourPoints").innerHTML = "Your Points: " + playerScore;
+        document.getElementById("playerAttr").innerHTML = "Your Height Attribute - " + yourCards[cardIndex]._height;
+        document.getElementById("compAttr").innerHTML = "Computers Height Attribute - " + compCards[cardIndex]._height;
+        document.getElementById("whoWon").innerHTML = "You won this round! 1 point for you."
     } else if (compCards[cardIndex]._height > yourCards[cardIndex]._height) {
         console.log(yourCards[cardIndex]._height)
         console.log(compCards[cardIndex]._height)
@@ -188,7 +180,9 @@ document.getElementById("attr-3").addEventListener("click", function() {
         console.log("Player Score: " + playerScore)
         console.log("Computer Score: " + compScore);
         document.getElementById("compPoints").innerHTML = "Computer Points: " + compScore;
-        // cardIndex++;
+        document.getElementById("compAttr").innerHTML = "Computers Height Attribute - " + compCards[cardIndex]._height;
+        document.getElementById("playerAttr").innerHTML = "Your Height Attribute - " + yourCards[cardIndex]._height;
+        document.getElementById("whoWon").innerHTML = "You Lost the round 1 point for the computer."
     }
 });
 // Kills
@@ -200,8 +194,10 @@ document.getElementById("attr-4").addEventListener("click", function() {
         console.log("PLayer wins this round")
         console.log("Player Score: " + playerScore);
         console.log("Computer Score: " + compScore);
-        document.getElementById("yourPoints").innerHTML = "Your Points: " + playerScore
-        // cardIndex++;
+        document.getElementById("yourPoints").innerHTML = "Your Points: " + playerScore;
+        document.getElementById("playerAttr").innerHTML = "Your Kills Attribute - " + yourCards[cardIndex]._kills;
+        document.getElementById("compAttr").innerHTML = "Computers Kills Attribute - " + compCards[cardIndex]._kills;
+        document.getElementById("whoWon").innerHTML = "You won this round! 1 point for you."
     } else if (compCards[cardIndex]._kills > yourCards[cardIndex]._kills) {
         console.log(yourCards[cardIndex]._kills)
         console.log(compCards[cardIndex]._kills)
@@ -210,7 +206,9 @@ document.getElementById("attr-4").addEventListener("click", function() {
         console.log("Player Score: " + playerScore)
         console.log("Computer Score: " + compScore);
         document.getElementById("compPoints").innerHTML = "Computer Points: " + compScore;
-        // cardIndex++;
+        document.getElementById("playerAttr").innerHTML = "Your Kills Attribute - " + yourCards[cardIndex]._kills;
+        document.getElementById("compAttr").innerHTML = "Computers Kills Attribute - " + compCards[cardIndex]._kills;
+        document.getElementById("whoWon").innerHTML = "You Lost the round. 1 point for the computer."
     }
 });
 // Evilness
@@ -223,7 +221,9 @@ document.getElementById("attr-5").addEventListener("click", function() {
         console.log("Player Score: " + playerScore);
         console.log("Computer Score: " + compScore);
         document.getElementById("yourPoints").innerHTML = "Your Points: " + playerScore
-        // cardIndex++;
+        document.getElementById("playerAttr").innerHTML = "Your Evilness Attribute - " + yourCards[cardIndex]._evilness;
+        document.getElementById("compAttr").innerHTML = "Computers Evilness Attribute - " + compCards[cardIndex]._evilness;
+        document.getElementById("whoWon").innerHTML = "You won this round! 1 point for you."
     } else if (compCards[cardIndex]._evilness > yourCards[cardIndex]._evilness) {
         console.log(yourCards[cardIndex]._evilness)
         console.log(compCards[cardIndex]._evilness)
@@ -232,7 +232,9 @@ document.getElementById("attr-5").addEventListener("click", function() {
         console.log("Player Score: " + playerScore)
         console.log("Computer Score: " + compScore);
         document.getElementById("compPoints").innerHTML = "Computer Points: " + compScore;
-        // cardIndex++;
+        document.getElementById("playerAttr").innerHTML = "Your Evilness Attribute - " + yourCards[cardIndex]._evilness;
+        document.getElementById("compAttr").innerHTML = "Computers Evilness Attribute - " + compCards[cardIndex]._evilness;
+        document.getElementById("whoWon").innerHTML = "You Lost this round.1 point for the computer."
     }
 });
 
@@ -255,6 +257,9 @@ document.getElementById("attr-1").addEventListener("click", function() {
         document.getElementById("attr-3").disabled = false
         document.getElementById("attr-4").disabled = false
         document.getElementById("attr-5").disabled = false
+        document.getElementById("whoWon").innerHTML = "";
+        document.getElementById("playerAttr").innerHTML = "";
+        document.getElementById("compAttr").innerHTML = "";
     })
 });
 document.getElementById("attr-2").addEventListener("click", function() {
@@ -269,6 +274,9 @@ document.getElementById("attr-2").addEventListener("click", function() {
         document.getElementById("attr-3").disabled = false
         document.getElementById("attr-4").disabled = false
         document.getElementById("attr-5").disabled = false
+        document.getElementById("whoWon").innerHTML = "";
+        document.getElementById("playerAttr").innerHTML = "";
+        document.getElementById("compAttr").innerHTML = "";
     })
 });
 document.getElementById("attr-3").addEventListener("click", function() {
@@ -283,6 +291,9 @@ document.getElementById("attr-3").addEventListener("click", function() {
         document.getElementById("attr-3").disabled = false
         document.getElementById("attr-4").disabled = false
         document.getElementById("attr-5").disabled = false
+        document.getElementById("whoWon").innerHTML = "";
+        document.getElementById("playerAttr").innerHTML = "";
+        document.getElementById("compAttr").innerHTML = "";
     })
 });
 document.getElementById("attr-4").addEventListener("click", function() {
@@ -297,6 +308,9 @@ document.getElementById("attr-4").addEventListener("click", function() {
         document.getElementById("attr-3").disabled = false
         document.getElementById("attr-4").disabled = false
         document.getElementById("attr-5").disabled = false
+        document.getElementById("whoWon").innerHTML = "";
+        document.getElementById("playerAttr").innerHTML = "";
+        document.getElementById("compAttr").innerHTML = "";
     })
 });
 document.getElementById("attr-5").addEventListener("click", function() {
@@ -311,15 +325,12 @@ document.getElementById("attr-5").addEventListener("click", function() {
         document.getElementById("attr-3").disabled = false
         document.getElementById("attr-4").disabled = false
         document.getElementById("attr-5").disabled = false
+        document.getElementById("whoWon").innerHTML = "";
+        document.getElementById("playerAttr").innerHTML = "";
+        document.getElementById("compAttr").innerHTML = "";
     })
 });
 
 
-// document.getElementById("nextCard").addEventListener("click", function() {
-//     document.getElementById("nextCard").disabled = true;
-//     document.getElementById("attr-1").addEventListener("click", function() {
-//         document.getElementById("nextCard").disabled = false;
-//     })
-// })
 
 
